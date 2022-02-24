@@ -6,11 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
-<<<<<<< HEAD
 import { PatientsListComponent } from './Components/patients-list/patients-list.component';
-=======
 import { HomeComponent } from './Components/home/home.component';
->>>>>>> 6f19c8948d2a0bc15092631148fdcd2c70f7354a
 
 @NgModule({
   declarations: [
