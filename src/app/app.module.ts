@@ -10,6 +10,8 @@ import { PatientsListComponent } from './Components/patients-list/patients-list.
 import { HomeComponent } from './Components/home/home.component';
 <<<<<<< HEAD
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+import { EditPatientComponent } from './Components/edit-patient/edit-patient.component';
+import { DeletePatientComponent } from './Components/patient/delete-patient/delete-patient.component';
 =======
 import { AddPatientComponent } from './Components/patients/add-patient/add-patient.component';
 >>>>>>> c8341c6f2e4f019a8640cf9a1f0d1ab59d9cc5dc
@@ -22,7 +24,9 @@ import { AddPatientComponent } from './Components/patients/add-patient/add-patie
 <<<<<<< HEAD
     PatientsListComponent,
 <<<<<<< HEAD
-PageNotFoundComponent
+PageNotFoundComponent,
+EditPatientComponent,
+DeletePatientComponent
 =======
 AddPatientComponent
 >>>>>>> c8341c6f2e4f019a8640cf9a1f0d1ab59d9cc5dc
