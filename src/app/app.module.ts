@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 
 import { AuthenticationComponent } from './Components/authentication/authentication.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
