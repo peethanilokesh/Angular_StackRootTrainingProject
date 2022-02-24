@@ -14,6 +14,9 @@ import { DeletePatientComponent } from './Components/patient/delete-patient/dele
 import { EditPatientComponent } from './Components/patient/edit-patient/edit-patient.component';
 import { PatientsListComponent } from './Components/patient/patients-list/patients-list.component';
 import { AddPatientComponent } from './Components/patient/add-patient/add-patient.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './Components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { AddPatientComponent } from './Components/patient/add-patient/add-patien
     EditPatientComponent,
     PatientsListComponent,
     DeletePatientComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    RegisterComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
