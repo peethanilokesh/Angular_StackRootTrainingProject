@@ -14,19 +14,21 @@ export class PatientService {
     
     baseApiUrl: string = environment.badeApiUrl + "patient/";
 
-    GetPatients(): Observable<IPatient[]>{
-        return this.httpClient.get<IPatient[]>(this.baseApiUrl);
+    GetPatients(): Observable<any[]>{
+        return this.httpClient.get<any[]>(this.baseApiUrl);
     }
 
     GetPatientById(id: number): Observable<IPatient>{
-        return this.httpClient.get<IPatient>(this.baseApiUrl);
+
+        var url : string = this.baseApiUrl + id.toString();
+        return this.httpClient.get<IPatient>(url);
     }
 
     
     AddPatient(newPatient: IAddPatient) : Observable<any>{
 
         console.log(newPatient);
-        var response = this.httpClient.post<any>(this.baseApiUrl + "add",newPatient);
+        var response = this.httpClient.post<any>(this.baseApiUrl ,newPatient);
         
         this.router.navigate(['/patientList']);
 
@@ -52,9 +54,9 @@ export class PatientService {
         console.log("in edit book services")
         console.log(newPatient);
 
-        var suffix: string = "update/" + this.idOfPatientToBeEdited.toString();
+        var suffix: string = this.baseApiUrl + this.idOfPatientToBeEdited.toString();
 
-        var response = this.httpClient.put<any>(this.baseApiUrl + suffix, newPatient);
+        var response = this.httpClient.put<any>(suffix, newPatient);
         console.log(response);
 
          this.router.navigate(['/patientList']);
@@ -62,27 +64,16 @@ export class PatientService {
         return response;
     }
 
-    idOfPatientToBeDeleted: number = 0;
 
-    PassIdToDeleteComponent(id: number){
+    DeletePatient(idOfPatientToBeDeleted: number) : Observable<any>{
 
-        console.log("in patient services")
-        console.log(id);
+        var suffix: string = this.baseApiUrl + idOfPatientToBeDeleted.toString();
 
-        this.idOfPatientToBeDeleted = id;
-
-        this.router.navigate(['/deletePatient']);
-
-    }
-
-    DeletePatient() : Observable<any>{
-
-        var suffix: string = "delete/" + this.idOfPatientToBeDeleted.toString();
-
-        var response = this.httpClient.delete<any>(this.baseApiUrl + suffix);
+        var response = this.httpClient.delete<any>(suffix);
         console.log(response);
 
-        this.router.navigate(['/patientList']);
+       //  this.router.navigate(['/patientList']);
+
 
         return response;
     }

@@ -15,36 +15,15 @@ export class PatientsListComponent implements OnInit {
 
     d = new Date(2018, 11, 24, 10, 33, 30, 0);
 
-  patients: IPatient[] = [{
-    PatientId: 1,
-    PatientName: "some", 
-    PatientAge: 20,
-    PatientGender: "some",
-    Department: "some",
-    DoctorName: "some",
-    DoctorFee: 200,
-    RegisterDate: this.d,
-    CreatedBy: "some"
-  },
-  {
-    PatientId: 10,
-    PatientName: "xomething", 
-    PatientAge: 20,
-    PatientGender: "some",
-    Department: "some",
-    DoctorName: "some",
-    DoctorFee: 200,
-    RegisterDate: this.d,
-    CreatedBy: "some"
-  }];
+  patients: IPatient[] = [];
+
   searchText: string = "";
   
   isPatientDataAvailable: boolean = false;
 
-  ngOnInit(): void {
-
+  GetPatientRefress(){
     this.patientServices.GetPatients()
-    .subscribe((data: IPatient[]) =>
+    .subscribe((data : any[]) =>
     {
         this.isPatientDataAvailable = true;
         console.log(data);
@@ -52,17 +31,39 @@ export class PatientsListComponent implements OnInit {
     }
     );
   }
+  ngOnInit(): void {
+
+   this.GetPatientRefress();
+
+    console.log("after init");
+    console.log(this.patients);
+  }
 
   onClickEdit(id: number){
-    console.log(id)
+    console.log("clicked edit");
+  
+   console.log(id)
 
-    this.patientServices.PassIdToEditComponent(id);
+   
+   this.patientServices.PassIdToEditComponent(id);
+
+
     
   }
 
   onClickDelete(id : number){
+    console.log("in on click delete");
     console.log(id);
-    this.patientServices.PassIdToDeleteComponent(id);
+    this.patientServices.DeletePatient(id)
+    .subscribe((data : any)=>{
+      console.log(data);
+
+      this.GetPatientRefress();
+      this.router.navigate(['/patientList']);
+    })
+
+    this.GetPatientRefress();
+   
   }
 
 
@@ -72,13 +73,13 @@ export class PatientsListComponent implements OnInit {
     console.log("clicked")
 
     if(this.isIdSortedAsc){
-      this.patients.sort((a, b) => {return b.PatientId  - a.PatientId});
+      this.patients.sort((a, b) => {return b.patientId  - a.patientId});
       this.isIdSortedAsc = false;
     }
 
     else{
       this.isIdSortedAsc = true;
-      this.patients.sort((a, b) => {return a.PatientId  - b.PatientId});
+      this.patients.sort((a, b) => {return a.patientId  - b.patientId});
     }
   }
 
@@ -89,7 +90,7 @@ export class PatientsListComponent implements OnInit {
 
     if(this.isNameSortedAsc){
       this.patients.sort((a, b) => {
-        if(a.PatientName < b.PatientName)
+        if(a.patientName < b.patientName)
         return -1;
 
         return 1;
@@ -100,7 +101,7 @@ export class PatientsListComponent implements OnInit {
     else{
       this.isNameSortedAsc = true;
       this.patients.sort((a, b) => {
-        if(a.PatientName < b.PatientName)
+        if(a.patientName < b.patientName)
         return 1;
 
         return -1;

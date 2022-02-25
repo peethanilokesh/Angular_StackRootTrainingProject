@@ -1,6 +1,6 @@
 <br>
 
-<h1> List Of Patients</h1>
+<h1> List Of Patients </h1>
 
 <hr>
 
@@ -28,25 +28,56 @@
     
         <tbody>
     
-            <ng-container *ngFor="let patient of patients | SearchFilter : searchText" >
+            <ng-container *ngFor="let patient of patients | SearchFilter : searchText " >
                
     
                 <tr >
-                    <td> {{patient.PatientId}}</td>
-                    <td> {{patient.PatientName}}</td>
-                    <td> {{patient.PatientAge}}</td>
-                    <td> {{patient.PatientGender}} </td>
-                    <td> {{patient.Department}}</td>
-                    <td> {{patient.DoctorName}}</td>
-                    <td> {{patient.DoctorFee}}</td>
-                    <td> {{patient.RegisterDate}}</td>
-                    <td> {{patient.CreatedBy}}</td>
+                    <td> {{patient.patientId}}</td>
+                    <td> {{patient.patientName}}</td>
+                    <td> {{patient.patientAge}}</td>
+                    <td> {{patient.patientGender}} </td>
+                    <td> {{patient.department}}</td>
+                    <td> {{patient.doctorName}}</td>
+                    <td> {{patient.doctorFee}}</td>
+                    <td> {{patient.registerDate}}</td>
+                    <td> {{patient.createdBy}}</td>
 
                     <td>
                         <div class ="my-icosn">
-                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.PatientId)" ><i class="material-icons">&#xE254;</i></a>
-                            
-                            <a class="delete" title="Delete" data-toggle="tooltip" (click)="onClickDelete(patient.PatientId)" ><i class="material-icons">&#xE872;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.patientId)" ><i class="material-icons">&#xE254;</i></a>
+                            <!-- Button trigger modal -->
+<a   data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="material-icons">&#xE872;</i>
+</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+            <div class="modal-body">    
+            <h5>Are you sure you want to delete?</h5>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click) = (onClickDelete(patient.patientId))>Yes</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- 
+  <div class="modal-dialog modal-dialog-centered">
+    ...
+  </div> -->
+                            <!-- <a class="delete" title="Delete" data-toggle="tooltip" (click)="onClickDelete(patient.PatientId)" ><i class="material-icons">&#xE872;</i></a> -->
 
                         </div>
                     </td>

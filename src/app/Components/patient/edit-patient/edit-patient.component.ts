@@ -23,12 +23,12 @@ export class EditPatientComponent implements OnInit {
     private router: Router) {
       this.patientService.GetPatientById(patientService.idOfPatientToBeEdited)
       .subscribe((data: IPatient) =>{
-          this.newPatient.PatientName = data.PatientName;
-          this.newPatient.PatientAge = data.PatientAge;
-          this.newPatient.PatientGender = data.PatientGender;
-          this.newPatient.Department = data.Department;
-          this.newPatient.DoctorName = data.DoctorName;
-          this.newPatient.DoctorFee = data.DoctorFee;
+          this.newPatient.PatientName = data.patientName;
+          this.newPatient.PatientAge = data.patientAge;
+          this.newPatient.PatientGender = data.patientGender;
+          this.newPatient.Department = data.department;
+          this.newPatient.DoctorName = data.doctorName;
+          this.newPatient.DoctorFee = data.doctorFee;
       });
      }
 

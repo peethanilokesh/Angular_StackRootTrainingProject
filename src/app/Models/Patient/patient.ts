@@ -1,11 +1,11 @@
 export interface IPatient{
-    PatientId: number,
-    PatientName: string, 
-    PatientAge: number,
-    PatientGender: string,
-    Department: string,
-    DoctorName: string,
-    DoctorFee: number,
-    RegisterDate: Date,
-    CreatedBy: string
+    patientId: number,
+    patientName: string, 
+    patientAge: number,
+    patientGender: string,
+    department: string,
+    doctorName: string,
+    doctorFee: number,
+    registerDate: Date,
+    createdBy: string
 }
