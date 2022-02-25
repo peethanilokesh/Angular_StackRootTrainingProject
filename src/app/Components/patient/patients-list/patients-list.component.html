@@ -4,6 +4,8 @@
 
 <hr>
 
+<ng-container *ngIf="patientsCount">
+
 <div class = "form-group my-group">
     <input type = "text" class = "form-control search-field" placeholder="Search Here"
     [(ngModel)]="searchText">
@@ -73,11 +75,6 @@
     </div>
   </div>
   
-<!-- 
-  <div class="modal-dialog modal-dialog-centered">
-    ...
-  </div> -->
-                            <!-- <a class="delete" title="Delete" data-toggle="tooltip" (click)="onClickDelete(patient.PatientId)" ><i class="material-icons">&#xE872;</i></a> -->
 
                         </div>
                     </td>
@@ -87,6 +84,12 @@
 
         </tbody>
     </table>
+
+  </ng-container>
+
+  <ng-container *ngIf="!patientsCount">
+    <h1> there are no records</h1>
+  </ng-container>
     
 
 

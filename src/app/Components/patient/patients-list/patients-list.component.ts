@@ -24,6 +24,8 @@ export class PatientsListComponent implements OnInit {
   
   isPatientDataAvailable: boolean = false;
 
+  patientsCount: boolean = true;
+
   GetPatientRefress(){
    
   }
@@ -36,6 +38,7 @@ export class PatientsListComponent implements OnInit {
        this.isPatientDataAvailable = true;
        console.log(data);
        this.patients = data;
+       this.patientsCount = this.patients.length > 0? true: false;
        
    }
    );
