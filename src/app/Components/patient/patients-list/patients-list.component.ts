@@ -11,7 +11,10 @@ import { PatientService } from 'src/app/Services/patient.services';
 export class PatientsListComponent implements OnInit {
 
   constructor(private patientServices: PatientService,
-    private router: Router) { }
+    private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+     }
 
     d = new Date(2018, 11, 24, 10, 33, 30, 0);
 
