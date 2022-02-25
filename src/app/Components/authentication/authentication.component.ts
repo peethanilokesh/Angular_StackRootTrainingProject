@@ -25,7 +25,7 @@ export class AuthenticationComponent implements OnInit {
         // console.log(res.token)
         if(res.token=="Wroung")
         {
-          alert("Wroung Credintials")
+          alert("Wrong Credintials!!!!")
         }
         else{
           localStorage.setItem('token',res.token)
