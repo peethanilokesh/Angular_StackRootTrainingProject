@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { ILogin } from '../Models/Authentication/login';
 import { ILoginRes } from '../Models/Authentication/loginRes';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
-    baseAuthenticationUrl:string='http://localhost:9290/api/authentication/';
+    baseAuthenticationUrl:string= environment.badeApiUrl+ 'authentication/';
 
 
     constructor(private httpClient: HttpClient,private router:Router) { }
