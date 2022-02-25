@@ -4,7 +4,7 @@
 
 <hr>
 
-<ng-container *ngIf="patientsCount">
+
 
 <div class = "form-group my-group">
     <input type = "text" class = "form-control search-field" placeholder="Search Here"
@@ -29,10 +29,10 @@
         </thead>
     
         <tbody>
-    
+          
             <ng-container *ngFor="let patient of patients | SearchFilter : searchText " >
                
-    
+              <ng-container *ngIf="patients != null">
                 <tr >
                     <td> {{patient.patientId}}</td>
                     <td> {{patient.patientName}}</td>
@@ -82,14 +82,18 @@
                 
             </ng-container>
 
+          </ng-container>
+
         </tbody>
     </table>
 
-  </ng-container>
-
+ 
+<div style="display: flex;align-items: center;justify-content: center;">
+  
   <ng-container *ngIf="!patientsCount">
-    <h1> there are no records</h1>
+    <img src="https://i.pinimg.com/originals/49/e5/8d/49e58d5922019b8ec4642a2e2b9291c2.png" width="400px" height="400px">
   </ng-container>
+</div>
     
 
 
