@@ -23,13 +23,20 @@ export class EditPatientComponent implements OnInit {
     private router: Router) {
       this.patientService.GetPatientById(patientService.idOfPatientToBeEdited)
       .subscribe((data: IPatient) =>{
+        this.newPatient.DoctorFee = data.doctorFee;
           this.newPatient.PatientName = data.patientName;
           this.newPatient.PatientAge = data.patientAge;
           this.newPatient.PatientGender = data.patientGender;
           this.newPatient.Department = data.department;
           this.newPatient.DoctorName = data.doctorName;
-          this.newPatient.DoctorFee = data.doctorFee;
+          
+
+          // console.log("in constructor of editComponent");
+          // console.log(this.newPatient);
       });
+
+      // console.log("in edit init");
+      // console.log(this.newPatient);
      }
 
   
@@ -43,7 +50,7 @@ export class EditPatientComponent implements OnInit {
     this.patientService.EditPatient(this.newPatient)
     .subscribe((data : any) =>
     {
-      console.log(data);
+     // console.log("in subscribed");
       this.router.navigate(['/patientList'])
     });
   }
