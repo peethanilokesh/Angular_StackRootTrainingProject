@@ -19,10 +19,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   register(){
-    this.authService.login(this.registerDetails).subscribe(
+    this.authService.Register(this.registerDetails).subscribe(
       res=>{
-        console.log(res.token)
-        localStorage.setItem('token',res.token)
+       
         this.router.navigate(['/login'])
     })
   }

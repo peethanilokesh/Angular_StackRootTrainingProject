@@ -28,5 +28,8 @@ export class AuthenticationComponent implements OnInit {
     })
 
   }
+  Toregister(){
+    this.router.navigate(['/register'])
+  }
 
 }
