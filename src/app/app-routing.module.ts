@@ -9,18 +9,19 @@ import { EditPatientComponent } from './Components/patient/edit-patient/edit-pat
 
 import { PatientsListComponent } from './Components/patient/patients-list/patients-list.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
   {path : 'login', component:AuthenticationComponent},
   {path : 'register', component:RegisterComponent},
   
-  {path : 'home', component:HomeComponent},
+  {path : 'home', component:HomeComponent, canActivate: [AuthGuard]},
 
-  {path: 'patientList', component: PatientsListComponent},
-  {path: 'addPatient', component: AddPatientComponent},
-  {path:'delete',component: DeletePatientComponent},
-  {path: 'editPatient',component: EditPatientComponent},
-  {path: '', redirectTo:'/home', pathMatch: 'full'},
+  {path: 'patientList', component: PatientsListComponent,canActivate: [AuthGuard]},
+  {path: 'addPatient', component: AddPatientComponent,canActivate: [AuthGuard]},
+  {path:'delete',component: DeletePatientComponent,canActivate: [AuthGuard]},
+  {path: 'editPatient',component: EditPatientComponent,canActivate: [AuthGuard]},
+  {path: '', redirectTo:'/login', pathMatch: 'full'},
   
   {path:'**', component: PageNotFoundComponent}
 ];

@@ -30,7 +30,7 @@ export class PatientService {
         console.log(newPatient);
         var response = this.httpClient.post<any>(this.baseApiUrl ,newPatient);
         
-        this.router.navigate(['/patientList']);
+       // this.router.navigate(['/patientList']);
 
         return response;
     }
@@ -59,7 +59,7 @@ export class PatientService {
         var response = this.httpClient.put<any>(suffix, newPatient);
         console.log(response);
 
-         this.router.navigate(['/patientList']);
+       //  this.router.navigate(['/patientList']);
 
         return response;
     }
