@@ -69,13 +69,13 @@ export class PatientService {
 
         var suffix: string = this.baseApiUrl + idOfPatientToBeDeleted.toString();
 
-        var response = this.httpClient.delete<any>(suffix);
-        console.log(response);
+        return  this.httpClient.delete<any>(suffix);
+    //     console.log(response);
 
-       //  this.router.navigate(['/patientList']);
+    //    //  this.router.navigate(['/patientList']);
 
 
-        return response;
+    //     return response;
     }
 
 
