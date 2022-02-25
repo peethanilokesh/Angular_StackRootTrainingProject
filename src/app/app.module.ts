@@ -15,10 +15,11 @@ import { EditPatientComponent } from './Components/patient/edit-patient/edit-pat
 import { PatientsListComponent } from './Components/patient/patients-list/patients-list.component';
 import { AddPatientComponent } from './Components/patient/add-patient/add-patient.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { SearchFiltePipe } from './pipes/SearchFilter';
+import { TokenInterceptorService } from './Interceptor/TokenInterceptorService';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,14 @@ import { SearchFiltePipe } from './pipes/SearchFilter';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

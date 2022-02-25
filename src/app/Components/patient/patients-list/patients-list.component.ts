@@ -11,7 +11,10 @@ import { PatientService } from 'src/app/Services/patient.services';
 export class PatientsListComponent implements OnInit {
 
   constructor(private patientServices: PatientService,
-    private router: Router) { }
+    private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+     }
 
     d = new Date(2018, 11, 24, 10, 33, 30, 0);
 
@@ -57,12 +60,15 @@ export class PatientsListComponent implements OnInit {
     this.patientServices.DeletePatient(id)
     .subscribe((data : any)=>{
       console.log(data);
-
       this.GetPatientRefress();
+      // this.ngOnInit();
+    //   this.router.navigateByUrl('/patientList', { skipLocationChange: true }).then(() => {
+    //     this.router.navigate(['PatientsListComponent']);
+    // }); 
       this.router.navigate(['/patientList']);
     })
 
-    this.GetPatientRefress();
+    // this.GetPatientRefress();
    
   }
 
