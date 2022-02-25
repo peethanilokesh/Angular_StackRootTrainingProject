@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { SearchFiltePipe } from './pipes/SearchFilter';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     DeletePatientComponent,
     AddPatientComponent,
     RegisterComponent,
+    SearchFiltePipe,
     FooterComponent
 
   ],

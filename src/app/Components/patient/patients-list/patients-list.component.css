@@ -1,0 +1,49 @@
+.md-button {
+    
+    border: 1px solid gray;
+  border-bottom: 1px solid ;
+  box-shadow: 0px 0px 10px ;
+
+    color : gray;
+    margin-left: 20px;
+}
+
+table{
+    margin-left: 10px;
+   
+    font-family: 'Arial';
+    font-weight: 500;
+    border-collapse: collapse;
+  border: 1px solid gray;
+  border-bottom: 1px solid ;
+  box-shadow: 0px 0px 30px ;
+  color: grey;
+  width: 98%;
+  background-color: lightgray;
+  }
+
+
+  h1{
+      margin-left: 20px;
+    color: grey;
+    align-items: center;
+}
+
+
+a{
+  text-decoration: underline;
+  cursor: pointer;
+  color: red;
+}
+
+.my-group{
+    margin-left: 20px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+
+.edit{
+  color: black;
+  margin-right: 10px;
+}

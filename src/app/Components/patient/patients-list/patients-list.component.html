@@ -1,1 +1,62 @@
-<p>patients-list works!</p>
+<br>
+
+<h1> List Of Patients</h1>
+
+<hr>
+
+<div class = "form-group my-group">
+    <input type = "text" class = "form-control search-field" placeholder="Search Here"
+    [(ngModel)]="searchText">
+
+</div>
+    <table  class="table table-striped table-light table-hover table-borderless" >
+        <caption>List of Patients</caption>
+        <thead>
+            <tr style ="color: black;">
+                <th><a (click) = "onClickId()"> ID </a>   </th>
+                <th><a (click) = "onClickName()"> Name </a>   </th>
+                <th> Age</th>
+                <th> Gender</th>
+                <th> Department</th> 
+                <th> Doctor Name</th>
+                <th> Doctor Fee</th>
+                <th> Registration Date</th>
+                <th> Created By</th>
+                <th> Edit/delete</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+    
+            <ng-container *ngFor="let patient of patients | SearchFilter : searchText" >
+               
+    
+                <tr >
+                    <td> {{patient.PatientId}}</td>
+                    <td> {{patient.PatientName}}</td>
+                    <td> {{patient.PatientAge}}</td>
+                    <td> {{patient.PatientGender}} </td>
+                    <td> {{patient.Department}}</td>
+                    <td> {{patient.DoctorName}}</td>
+                    <td> {{patient.DoctorFee}}</td>
+                    <td> {{patient.RegisterDate}}</td>
+                    <td> {{patient.CreatedBy}}</td>
+
+                    <td>
+                        <div class ="my-icosn">
+                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.PatientId)" ><i class="material-icons">&#xE254;</i></a>
+                            
+                            <a class="delete" title="Delete" data-toggle="tooltip" (click)="onClickDelete(patient.PatientId)" ><i class="material-icons">&#xE872;</i></a>
+
+                        </div>
+                    </td>
+                </tr>
+                
+            </ng-container>
+
+        </tbody>
+    </table>
+    
+
+
+

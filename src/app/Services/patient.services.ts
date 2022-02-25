@@ -18,6 +18,10 @@ export class PatientService {
         return this.httpClient.get<IPatient[]>(this.baseApiUrl);
     }
 
+    GetPatientById(id: number): Observable<IPatient>{
+        return this.httpClient.get<IPatient>(this.baseApiUrl);
+    }
+
     
     AddPatient(newPatient: IAddPatient) : Observable<any>{
 
@@ -60,7 +64,7 @@ export class PatientService {
 
     idOfPatientToBeDeleted: number = 0;
 
-    PassDataToDeleteComponent(id: number){
+    PassIdToDeleteComponent(id: number){
 
         console.log("in patient services")
         console.log(id);

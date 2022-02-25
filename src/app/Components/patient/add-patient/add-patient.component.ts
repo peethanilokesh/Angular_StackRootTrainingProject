@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IAddPatient } from 'src/app/Models/Patient/addPatient';
+import { PatientService } from 'src/app/Services/patient.services';
 
 @Component({
   selector: 'app-add-patient',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPatientComponent implements OnInit {
 
-  constructor() { }
+  constructor(private patientServices : PatientService,
+    private router: Router) { }
+
+    newPatient : IAddPatient = {
+      PatientName: '', 
+      PatientAge: 0,
+      PatientGender: '',
+      Department: '',
+      DoctorName: '',
+      DoctorFee: 0
+    }
 
   ngOnInit(): void {
   }
 
+
+  onAddPatient(){
+
+    console.log(this.newPatient);
+
+    this.patientServices.AddPatient(this.newPatient)
+    .subscribe((data : any) =>
+    {
+      console.log(data);
+      this.router.navigate(['/patientList'])
+    });
+
+  }
 }

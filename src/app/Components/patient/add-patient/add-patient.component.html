@@ -1,1 +1,47 @@
-<p>add-patient works!</p>
+
+<h2> Add Patient</h2>
+<div class="sidenav">
+    <div class="login-main-text">
+       <h1 style ="font-weight: bold;">  Add Patient Details </h1>
+      
+    </div>
+ </div>
+
+<form #addForm="ngForm"  (ngSubmit) = "onAddPatient()">
+    <div class="main">
+       <div class="col-md-6 col-sm-12">
+          <div class="login-form">
+            
+                <div class="mb-3">
+                   <label for="Name" class="form-label">Name</label>
+                   <input type="text" class="form-control" name="Name" id="Name" [(ngModel)]="newPatient.PatientName" #Name="ngModel"  required>     
+                   <p *ngIf="Name.invalid && Name.touched" class="alert alert-danger">Name is mandatory</p>
+               </div>
+               
+               <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="Description" id="Description" [(ngModel)]="newPatient.PatientAge" #Description="ngModel"  required>     
+                <p *ngIf="Description.invalid && Description.touched" class="alert alert-danger">Description is mandatory</p>
+            </div>
+
+            <div class="mb-3">
+                <label for="Author" class="form-label">Author</label>
+                <input type="text" class="form-control" name="Author" id="Author" [(ngModel)]="newPatient.PatientGender" #Author="ngModel"  required>     
+                <p *ngIf="Author.invalid && Author.touched" class="alert alert-danger">Author is mandatory</p>
+            </div>
+
+            <div class="mb-3">
+                <label for="Amount" class="form-label">Amount</label>
+                <input type="number" class="form-control" name="Amount" id="Amount" [(ngModel)]="newPatient.Department" #Amount="ngModel"  required>     
+                <p *ngIf="Amount.invalid && Amount.touched" class="alert alert-danger">Amount is mandatory</p>
+            </div>
+
+            
+                
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-black">Add Book</button>
+                
+          </div>
+       </div>
+    </div>
+   </form>
+   
