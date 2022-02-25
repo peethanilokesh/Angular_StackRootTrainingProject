@@ -16,8 +16,8 @@ export class AddPatientComponent implements OnInit {
     newPatient : IAddPatient = {
       PatientName: '', 
       PatientAge: 0,
-      PatientGender: '',
-      Department: '',
+      PatientGender: 'Female',
+      Department: 'ENT',
       DoctorName: '',
       DoctorFee: 0
     }

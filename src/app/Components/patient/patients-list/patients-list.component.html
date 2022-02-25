@@ -15,7 +15,7 @@
         <caption>List of Patients</caption>
         <thead>
             <tr style ="color: black;">
-                <th><a (click) = "onClickId()"> ID </a>   </th>
+                <th ><a (click) = "onClickId()"> ID </a>   </th>
                 <th><a (click) = "onClickName()"> Name </a>   </th>
                 <th> Age</th>
                 <th> Gender</th>
@@ -46,25 +46,26 @@
 
                     <td>
                         <div class ="my-icosn">
-                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.patientId)" ><i class="material-icons">&#xE254;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.patientId)" ><i style="color: blue;" class="material-icons">&#xE254;</i></a>
                             <!-- Button trigger modal -->
-<a   data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="material-icons">&#xE872;</i>
+<a   data-bs-toggle="modal" data-bs-target="#exampleModal22">
+    <i style="color: red;" class="material-icons">&#xE872;</i>
 </a>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
+      <div class="modal-content" >
 
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+          <h5 class="modal-title" id="exampleModal22" style = "color: red;">Delete</h5>
           
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-            <div class="modal-body">    
-            <h5>Are you sure you want to delete?</h5>
+            <div class="modal-body" >    
+            <h5 style = "color: red;">Are you sure you want to delete?</h5>
+            <small> This can't be undone.</small>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -91,7 +92,7 @@
 <div style="display: flex;align-items: center;justify-content: center;">
   
   <ng-container *ngIf="!patientsCount">
-    <img src="https://i.pinimg.com/originals/49/e5/8d/49e58d5922019b8ec4642a2e2b9291c2.png" width="400px" height="400px">
+    <img src="https://i.pinimg.com/originals/49/e5/8d/49e58d5922019b8ec4642a2e2b9291c2.png" width="400px" height="300px">
   </ng-container>
 </div>
     

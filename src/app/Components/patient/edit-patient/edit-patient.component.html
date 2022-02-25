@@ -57,12 +57,13 @@
                     <div class="card-body p-md-5 mx-md-4">
       
       
-                      <form >
+                      <form #addForm="ngForm" (ngSubmit)="onEditPatient()">
                         <p>Edit Patients Details</p><br>
       
                         <div class="form-outline mb-4">
                           <label class="form-label" for="userName">Patient Name</label>
-                          <input type="text" id="userName" name="userName"  class="form-control" placeholder="Patient Name" [(ngModel)]="newPatient.PatientName" required/>
+                          <input type="text" id="userName" name="userName"  class="form-control" placeholder="Patient Name" [(ngModel)]="newPatient.PatientName" #userName="ngModel" required/>
+                          <p *ngIf="userName.invalid && userName.touched" class="alert alert-danger">Patient Name is mandatory</p>
                         </div>
   
                         <div class="form-outline mb-4">
@@ -83,17 +84,19 @@
   
                         <div class="form-outline mb-4">
                             <label class="form-label" for="userName">Department</label>
-                            <select  name="Category" id="Category" class="form-control"  [(ngModel)]="newPatient.Department" required>
+                            <select  name="Category" id="Category" class="form-control"  [(ngModel)]="newPatient.Department" #category="ngModel" required>
                                 <option value="Orthopaedics">Orthopaedics</option>
                                 <option value="Paediatrics">Paediatrics</option>
                                 <option value="ENT">ENT</option>
                                 <option value="General Medicine">General Medicine</option>
                               </select>
+                              <p *ngIf="category.invalid && category.touched" class="alert alert-danger">Department is mandatory</p>
                           </div>
   
                           <div class="form-outline mb-4">
                             <label class="form-label" for="userName">Doctor Name</label>
-                            <input type="text" id="doctorName" name="doctorName"  class="form-control" placeholder="Doctor Name" [(ngModel)]="newPatient.DoctorName" required/>
+                            <input type="text" id="doctorName" name="doctorName"  class="form-control" placeholder="Doctor Name" [(ngModel)]="newPatient.DoctorName" #doctorName="ngModel" required/>
+                            <p *ngIf="doctorName.invalid && doctorName.touched" class="alert alert-danger">Doctor Name is mandatory</p>
                           </div>
   
                           <div class="form-outline mb-4">
@@ -102,7 +105,7 @@
                           </div>
       
                         <div class="text-center pt-1 mb-5 pb-1">
-                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" (click) = "onEditPatient()">Save</button>
+                          <button [disabled]="addForm.invalid" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" (click) = "onEditPatient()">Save</button>
                         </div>
       
                       </form>
