@@ -15,7 +15,7 @@
         <caption>List of Patients</caption>
         <thead>
             <tr style ="color: black;">
-                <th><a (click) = "onClickId()"> ID </a>   </th>
+                <th ><a (click) = "onClickId()"> ID </a>   </th>
                 <th><a (click) = "onClickName()"> Name </a>   </th>
                 <th> Age</th>
                 <th> Gender</th>
@@ -46,10 +46,10 @@
 
                     <td>
                         <div class ="my-icosn">
-                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.patientId)" ><i class="material-icons">&#xE254;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip" (click)="onClickEdit(patient.patientId)" ><i style="color: blue;" class="material-icons">&#xE254;</i></a>
                             <!-- Button trigger modal -->
 <a   data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="material-icons">&#xE872;</i>
+    <i style="color: red;" class="material-icons">&#xE872;</i>
 </a>
   
   <!-- Modal -->
