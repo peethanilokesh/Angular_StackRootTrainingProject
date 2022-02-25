@@ -17,6 +17,7 @@ import { AddPatientComponent } from './Components/patient/add-patient/add-patien
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisterComponent } from './Components/register/register.component';
     PatientsListComponent,
     DeletePatientComponent,
     AddPatientComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent
 
   ],
   imports: [
