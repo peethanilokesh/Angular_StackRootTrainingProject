@@ -16,6 +16,8 @@ export class AuthenticationService {
         this.logginDetails=loginData.userName
         return this.httpClient.post<ILoginRes>(this.baseAuthenticationUrl + 'login', loginData);
     }
+    
+    
     getToken() {
         return localStorage.getItem('token')
     }

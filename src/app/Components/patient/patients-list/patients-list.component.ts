@@ -11,7 +11,10 @@ import { PatientService } from 'src/app/Services/patient.services';
 export class PatientsListComponent implements OnInit {
 
   constructor(private patientServices: PatientService,
-    private router: Router) { }
+    private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+     }
 
     d = new Date(2018, 11, 24, 10, 33, 30, 0);
 
@@ -22,19 +25,20 @@ export class PatientsListComponent implements OnInit {
   isPatientDataAvailable: boolean = false;
 
   GetPatientRefress(){
-    this.patientServices.GetPatients()
-    .subscribe((data : any[]) =>
-    {
-        this.isPatientDataAvailable = true;
-        console.log(data);
-        this.patients = data;
-    }
-    );
+   
   }
   ngOnInit(): void {
 
-   this.GetPatientRefress();
-
+   
+   this.patientServices.GetPatients()
+   .subscribe((data : any[]) =>
+   {
+       this.isPatientDataAvailable = true;
+       console.log(data);
+       this.patients = data;
+       
+   }
+   );
     console.log("after init");
     console.log(this.patients);
   }
@@ -54,14 +58,17 @@ export class PatientsListComponent implements OnInit {
   onClickDelete(id : number){
     console.log("in on click delete");
     console.log(id);
+
     this.patientServices.DeletePatient(id)
     .subscribe((data : any)=>{
-      console.log(data);
-
-      this.GetPatientRefress();
-      this.router.navigate(['/patientList']);
+     // console.log("deleted the patient");
+     // console.log(data);
+      
+     this.ngOnInit();
+     
     })
 
+    
     this.GetPatientRefress();
    
   }
