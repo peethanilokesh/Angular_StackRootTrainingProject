@@ -15,6 +15,7 @@ export class AuthenticationService {
     constructor(private httpClient: HttpClient,private router:Router) { }
     login(loginData:ILogin){
         this.logginDetails=loginData.userName
+        //console.log(this.logginDetails)
         return this.httpClient.post<ILoginRes>(this.baseAuthenticationUrl + 'login', loginData);
     }
 

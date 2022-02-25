@@ -9,12 +9,15 @@ import { AuthenticationService } from 'src/app/Services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService:AuthenticationService) { }
-
   loggedInUserName:string='';
 
-  ngOnInit(): void {
+  constructor(private authService:AuthenticationService) { 
     this.loggedInUserName=this.authService.logginDetails
+
+  }
+
+  ngOnInit(): void {
+    console.log(this.loggedInUserName)
   }
 
   
