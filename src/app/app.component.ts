@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hospital-Management-UI';
+  constructor(private authService:AuthenticationService){
+
+  }
+  isNavigationVisible():boolean
+  {
+    return this.authService.loggedIn()
+  }
+
 }
