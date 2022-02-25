@@ -22,9 +22,15 @@ export class AuthenticationComponent implements OnInit {
   login(){
     this.authService.login(this.loginDetails).subscribe(
       res=>{
-        console.log(res.token)
-        localStorage.setItem('token',res.token)
+        // console.log(res.token)
+        if(res.token=="Wroung")
+        {
+          alert("Wroung Credintials")
+        }
+        else{
+          localStorage.setItem('token',res.token)
         this.router.navigate(['/home'])
+        }
     })
 
   }
