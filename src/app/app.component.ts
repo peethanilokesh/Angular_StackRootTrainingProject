@@ -13,6 +13,7 @@ export class AppComponent {
   }
   isNavigationVisible():boolean
   {
+    // console.log(this.authService.loggedIn())
     return this.authService.loggedIn()
   }
 
