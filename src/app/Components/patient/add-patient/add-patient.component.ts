@@ -33,7 +33,8 @@ export class AddPatientComponent implements OnInit {
     this.patientServices.AddPatient(this.newPatient)
     .subscribe((data : any) =>
     {
-      console.log(data);
+      // console.log("in add patient");
+      // console.log(data);
       this.router.navigate(['/patientList'])
     });
 
