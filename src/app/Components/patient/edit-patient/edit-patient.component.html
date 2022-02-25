@@ -1,1 +1,123 @@
-<p>edit-patient works!</p>
+<!-- 
+<h2> Add Patient</h2>
+<div class="sidenav">
+    <div class="login-main-text">
+       <h1 style ="font-weight: bold;">  Add Patient Details </h1>
+      
+    </div>
+ </div>
+
+<form #addForm="ngForm"  (ngSubmit) = "onAddPatient()">
+    <div class="main">
+       <div class="col-md-6 col-sm-12">
+          <div class="login-form">
+            
+                <div class="mb-3">
+                   <label for="Name" class="form-label">Name</label>
+                   <input type="text" class="form-control" name="Name" id="Name" [(ngModel)]="newPatient.PatientName" #Name="ngModel"  required>     
+                   <p *ngIf="Name.invalid && Name.touched" class="alert alert-danger">Name is mandatory</p>
+               </div>
+               
+               <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="Description" id="Description" [(ngModel)]="newPatient.PatientAge" #Description="ngModel"  required>     
+                <p *ngIf="Description.invalid && Description.touched" class="alert alert-danger">Description is mandatory</p>
+            </div>
+
+            <div class="mb-3">
+                <label for="Author" class="form-label">Author</label>
+                <input type="text" class="form-control" name="Author" id="Author" [(ngModel)]="newPatient.PatientGender" #Author="ngModel"  required>     
+                <p *ngIf="Author.invalid && Author.touched" class="alert alert-danger">Author is mandatory</p>
+            </div>
+
+            <div class="mb-3">
+                <label for="Amount" class="form-label">Amount</label>
+                <input type="number" class="form-control" name="Amount" id="Amount" [(ngModel)]="newPatient.Department" #Amount="ngModel"  required>     
+                <p *ngIf="Amount.invalid && Amount.touched" class="alert alert-danger">Amount is mandatory</p>
+            </div>
+
+            
+                
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-black">Add Book</button>
+                
+          </div>
+       </div>
+    </div>
+   </form>
+    -->
+
+
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+      
+      
+                      <form >
+                        <p>Edit Patients Details</p><br>
+      
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="userName">Patient Name</label>
+                          <input type="text" id="userName" name="userName"  class="form-control" placeholder="Patient Name" [(ngModel)]="newPatient.PatientName" required/>
+                        </div>
+  
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="gender">Patient Gender</label>
+                            <div class="col-10">
+                                <input id="i3" type="radio" name="r1" value = "Female" [(ngModel)]="newPatient.PatientGender" required>Female
+                                <input style="margin-left:30px" type="radio" name="r1" value = "Male" [(ngModel)]="newPatient.PatientGender" required>Male
+                            </div>
+                               
+                            
+                        </div>
+            
+  
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form2Example22">Patient Age</label>
+                          <input type="number" id="password" name="password" class="form-control" placeholder="Patient Age" [(ngModel)]="newPatient.PatientAge"required/>
+                        </div>
+  
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="userName">Department</label>
+                            <select  name="Category" id="Category" class="form-control"  [(ngModel)]="newPatient.Department" required>
+                                <option value="Orthopaedics">Orthopaedics</option>
+                                <option value="Paediatrics">Paediatrics</option>
+                                <option value="ENT">ENT</option>
+                                <option value="General Medicine">General Medicine</option>
+                              </select>
+                          </div>
+  
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for="userName">Doctor Name</label>
+                            <input type="text" id="doctorName" name="doctorName"  class="form-control" placeholder="Doctor Name" [(ngModel)]="newPatient.DoctorName" required/>
+                          </div>
+  
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for="fees">Doctor Fees</label>
+                            <input type="number" id="fees" name="fees"  class="form-control" placeholder="Fees"  [(ngModel)]="newPatient.DoctorFee" required/>
+                          </div>
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" (click) = "onEditPatient()">Save</button>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2" >
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80">
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  
+  

@@ -1,8 +1,8 @@
 export interface IEditPatient{
-    PatientName: string, 
-    PatientAge: number,
+    PatientName: string,
     PatientGender: string,
     Department: string,
     DoctorName: string,
-    DoctorFee: number
+    DoctorFee: number,
+    PatientAge: number
 }
