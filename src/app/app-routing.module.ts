@@ -4,6 +4,7 @@ import { AuthenticationComponent } from './Components/authentication/authenticat
 import { HomeComponent } from './Components/home/home.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { AddPatientComponent } from './Components/patient/add-patient/add-patient.component';
+import { EditPatientComponent } from './Components/patient/edit-patient/edit-patient.component';
 import { PatientsListComponent } from './Components/patient/patients-list/patients-list.component';
 import { RegisterComponent } from './Components/register/register.component';
 
@@ -15,7 +16,7 @@ const routes: Routes = [
 
   {path: 'patientList', component: PatientsListComponent},
   {path: 'addPatient', component: AddPatientComponent},
-  
+  {path: 'editPatient', component: EditPatientComponent},
   {path: '', redirectTo:'/home', pathMatch: 'full'},
   
   {path:'**', component: PageNotFoundComponent}

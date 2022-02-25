@@ -17,6 +17,8 @@ import { AddPatientComponent } from './Components/patient/add-patient/add-patien
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './Components/register/register.component';
+import { SearchFiltePipe } from './pipes/SearchFilter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,16 @@ import { RegisterComponent } from './Components/register/register.component';
     PatientsListComponent,
     DeletePatientComponent,
     AddPatientComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchFiltePipe
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
