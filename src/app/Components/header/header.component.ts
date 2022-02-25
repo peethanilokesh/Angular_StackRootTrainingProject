@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ILogin } from 'src/app/Models/Authentication/login';
+import { AuthenticationService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  loggedInUserName:string='';
+
+  constructor(private authService:AuthenticationService) { 
+    this.loggedInUserName=this.authService.logginDetails
+
+  }
 
   ngOnInit(): void {
+    console.log(this.loggedInUserName)
   }
+
+  
+
+
+  logout() {
+    this.authService.logOut();
+  }
+
 
 }

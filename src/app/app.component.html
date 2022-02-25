@@ -1,6 +1,6 @@
 
 <div >
-    <app-header></app-header>
+    <app-header *ngIf="isNavigationVisible()"></app-header>
     <!-- <app-authentication></app-authentication> -->
     <router-outlet></router-outlet>
     
