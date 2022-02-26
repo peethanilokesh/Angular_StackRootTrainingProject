@@ -63,7 +63,7 @@
                         <div class="form-outline mb-4">
                           <label class="form-label" for="userName">Patient Name</label>
                           <input type="text" id="userName" name="userName"  class="form-control" placeholder="Patient Name" [(ngModel)]="newPatient.PatientName" #userName="ngModel" required/>
-                          <p *ngIf="userName.invalid && userName.touched" class="alert alert-danger">Patient Name is mandatory</p>
+                          <p *ngIf="userName.invalid && userName.touched" style="font-size: smaller;color: red;">Patient Name is mandatory</p>
                         </div>
   
                         <div class="form-outline mb-4">
@@ -90,13 +90,13 @@
                                 <option value="ENT">ENT</option>
                                 <option value="General Medicine">General Medicine</option>
                               </select>
-                              <p *ngIf="category.invalid && category.touched" class="alert alert-danger">Department is mandatory</p>
+                              <p *ngIf="category.invalid && category.touched" style="font-size: smaller;color: red;">Department is mandatory</p>
                           </div>
   
                           <div class="form-outline mb-4">
                             <label class="form-label" for="userName">Doctor Name</label>
                             <input type="text" id="doctorName" name="doctorName"  class="form-control" placeholder="Doctor Name" [(ngModel)]="newPatient.DoctorName" #doctorName="ngModel" required/>
-                            <p *ngIf="doctorName.invalid && doctorName.touched" class="alert alert-danger">Doctor Name is mandatory</p>
+                            <p *ngIf="doctorName.invalid && doctorName.touched" style="font-size: smaller;color: red;">Doctor Name is mandatory</p>
                           </div>
   
                           <div class="form-outline mb-4">

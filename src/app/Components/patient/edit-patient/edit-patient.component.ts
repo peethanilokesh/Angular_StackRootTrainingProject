@@ -45,7 +45,7 @@ export class EditPatientComponent implements OnInit {
   }
 
   onEditPatient(){
-    console.log(this.newPatient);
+    // console.log(this.newPatient);
 
     this.patientService.EditPatient(this.newPatient)
     .subscribe((data : any) =>
