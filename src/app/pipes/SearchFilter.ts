@@ -23,13 +23,13 @@ export class SearchFiltePipe implements PipeTransform{
 
         if(!isNaN(args)){
             return value.filter((val: IPatient) => {
-                return val.patientId.toString().includes(args);
+                return val.patientId.toString().toLocaleLowerCase().includes(args);
             })
         }
 
         else{
             return value.filter((val: IPatient) => {
-                return val.patientName.toString().includes(args);
+                return val.patientName.toString().toLocaleLowerCase().includes(args);
             })
         }
     }
