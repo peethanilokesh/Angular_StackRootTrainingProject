@@ -9,10 +9,10 @@ import { AuthenticationService } from 'src/app/Services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  loggedInUserName:string='';
+  loggedInUserName =localStorage.getItem('user')
 
   constructor(private authService:AuthenticationService) { 
-    this.loggedInUserName=this.authService.logginDetails
+    // this.loggedInUserName=this.authService.logginDetails
 
   }
 
