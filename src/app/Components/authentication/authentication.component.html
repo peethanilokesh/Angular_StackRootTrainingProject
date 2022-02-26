@@ -19,7 +19,7 @@
 
                     <input type="text" id="userName" name="userName" style="border:none;border-bottom: 2px solid white;" #userName="ngModel" class="form-control" [(ngModel)]="loginDetails.userName" placeholder="UserName" required/>
                     
-                    <p style="font-size: smaller;color: red;" *ngIf="userName.invalid && userName.touched" >UserName is Mandatory</p>
+                    <p style="font-size: smaller;color: red;" *ngIf="userName.invalid && userName.touched" >  <mark style = "color: red;">     Username is Mandatory </mark> </p>
                   </div>
 
                   <div class="form-outline mb-4">
@@ -27,7 +27,7 @@
 
                     <input type="password" id="password" name="password" style=" border:none;border-bottom: 2px solid white;" #password="ngModel" class="form-control" [(ngModel)]="loginDetails.password" placeholder="Password" required/>
                     
-                    <p *ngIf="password.invalid && password.touched" style="font-size: smaller;color: red;" >password is Mandatory</p>
+                    <p *ngIf="password.invalid && password.touched" style="font-size: smaller;color: red; " > <mark style = "color: red;"> Password is Mandatory </mark></p>
 
                   </div>
 
