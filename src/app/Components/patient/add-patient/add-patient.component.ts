@@ -28,7 +28,7 @@ export class AddPatientComponent implements OnInit {
 
   onAddPatient(){
 
-    console.log(this.newPatient);
+    // console.log(this.newPatient);
 
     this.patientServices.AddPatient(this.newPatient)
     .subscribe((data : any) =>

@@ -27,7 +27,7 @@ export class PatientService {
     
     AddPatient(newPatient: IAddPatient) : Observable<any>{
 
-        console.log(newPatient);
+        // console.log(newPatient);
         var response = this.httpClient.post<any>(this.baseApiUrl ,newPatient);
         
        // this.router.navigate(['/patientList']);
@@ -40,8 +40,8 @@ export class PatientService {
 
     PassIdToEditComponent(id: number){
 
-        console.log("in book services id to be edited : ")
-        console.log(id);
+        // console.log("in book services id to be edited : ")
+        // console.log(id);
 
         this.idOfPatientToBeEdited =id;
 
@@ -51,13 +51,13 @@ export class PatientService {
 
     EditPatient(newPatient: IEditPatient) : Observable<any>{
 
-        console.log("in edit book services")
-        console.log(newPatient);
+        // console.log("in edit book services")
+        // console.log(newPatient);
 
         var suffix: string = this.baseApiUrl + this.idOfPatientToBeEdited.toString();
 
         var response = this.httpClient.put<any>(suffix, newPatient);
-        console.log(response);
+        // console.log(response);
 
        //  this.router.navigate(['/patientList']);
 

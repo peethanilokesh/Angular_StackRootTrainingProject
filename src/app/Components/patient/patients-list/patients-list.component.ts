@@ -36,20 +36,20 @@ export class PatientsListComponent implements OnInit {
    .subscribe((data : any[]) =>
    {
        this.isPatientDataAvailable = true;
-       console.log(data);
+       //console.log(data);
        this.patients = data;
        this.patientsCount = this.patients.length > 0? true: false;
        
    }
    );
-    console.log("after init");
-    console.log(this.patients);
+    // console.log("after init");
+    // console.log(this.patients);
   }
 
   onClickEdit(id: number){
-    console.log("clicked edit");
+  //   console.log("clicked edit");
   
-   console.log(id)
+  //  console.log(id)
 
    
    this.patientServices.PassIdToEditComponent(id);
@@ -59,8 +59,8 @@ export class PatientsListComponent implements OnInit {
   }
 
   onClickDelete(id : number){
-    console.log("in on click delete");
-    console.log(id);
+    // console.log("in on click delete");
+    // console.log(id);
 
     this.patientServices.DeletePatient(id)
     .subscribe((data : any)=>{
@@ -80,7 +80,7 @@ export class PatientsListComponent implements OnInit {
   isIdSortedAsc : boolean = false;
 
   onClickId(){
-    console.log("clicked")
+    // console.log("clicked")
 
     if(this.isIdSortedAsc){
       this.patients.sort((a, b) => {return b.patientId  - a.patientId});
@@ -96,7 +96,7 @@ export class PatientsListComponent implements OnInit {
   isNameSortedAsc : boolean = false;
   
   onClickName(){
-    console.log("clicked")
+    // console.log("clicked")
 
     if(this.isNameSortedAsc){
       this.patients.sort((a, b) => {

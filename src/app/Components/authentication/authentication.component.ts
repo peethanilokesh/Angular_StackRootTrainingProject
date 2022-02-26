@@ -25,10 +25,11 @@ export class AuthenticationComponent implements OnInit {
         // console.log(res.token)
         if(res.token=="Wroung")
         {
-          alert("Wrong Credintials!!!!")
+          alert("Wrong Credentials!!!!")
         }
         else{
           localStorage.setItem('token',res.token)
+          localStorage.setItem('user',res.username)
         this.router.navigate(['/home'])
         }
     })
