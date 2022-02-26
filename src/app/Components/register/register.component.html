@@ -40,7 +40,7 @@
                         <label class="form-label" for="userName">Your Name</label>
 
                         <input type="text" class="form-control" name="userName" id="userName" [(ngModel)]="registerDetails.userName" #username="ngModel" required >
-                        <p *ngIf="username.invalid && username.touched" class="alert alert-danger">UserName is Mandatory</p>
+                        <p *ngIf="username.invalid && username.touched" style="font-size: smaller;color: red;">UserName is Mandatory</p>
 
                       </div>
                     </div>
@@ -51,7 +51,7 @@
                         <label class="form-label" for="email">Your Email</label>
 
                         <input type="email" class="form-control" name="email" id="email" [(ngModel)]="registerDetails.email" #email="ngModel" required >
-                        <p *ngIf="email.invalid && email.touched" class="alert alert-danger">Email is Mandatory</p>
+                        <p *ngIf="email.invalid && email.touched" style="font-size: smaller;color: red;">Email is Mandatory</p>
 
                       </div>
                     </div>
@@ -62,7 +62,7 @@
                         <label class="form-label" for="password">Password</label>
 
                         <input type="password" class="form-control" name="password" id="password" [(ngModel)]="registerDetails.password" #password="ngModel" required >
-                        <p *ngIf="password.invalid && password.touched" class="alert alert-danger">Password is Mandatory</p>
+                        <p *ngIf="password.invalid && password.touched" style="font-size: smaller;color: red;">Password is Mandatory</p>
 
                       </div>
                     </div>
