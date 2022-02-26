@@ -29,6 +29,7 @@ export class AuthenticationComponent implements OnInit {
         }
         else{
           localStorage.setItem('token',res.token)
+          localStorage.setItem('user',res.username)
         this.router.navigate(['/home'])
         }
     })
