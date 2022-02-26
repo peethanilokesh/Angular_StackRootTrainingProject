@@ -17,7 +17,7 @@
                   <div class="form-outline mb-4" >
                     <label class="form-label" for="userName" style="color:white ;">Username</label>
 
-                    <input type="text" id="userName" name="userName" style="background-color: transparent;border:none;border-bottom: 2px solid white;" #userName="ngModel" class="form-control" [(ngModel)]="loginDetails.userName" placeholder="UserName" required/>
+                    <input type="text" id="userName" name="userName" style="border:none;border-bottom: 2px solid white;" #userName="ngModel" class="form-control" [(ngModel)]="loginDetails.userName" placeholder="UserName" required/>
                     
                     <p style="font-size: smaller;color: red;" *ngIf="userName.invalid && userName.touched" >UserName is Mandatory</p>
                   </div>
@@ -25,7 +25,7 @@
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example22" style="color: white;">Password</label>
 
-                    <input type="password" id="password" name="password" style="background-color: transparent; border:none;border-bottom: 2px solid white;" #password="ngModel" class="form-control" [(ngModel)]="loginDetails.password" placeholder="Password" required/>
+                    <input type="password" id="password" name="password" style=" border:none;border-bottom: 2px solid white;" #password="ngModel" class="form-control" [(ngModel)]="loginDetails.password" placeholder="Password" required/>
                     
                     <p *ngIf="password.invalid && password.touched" style="font-size: smaller;color: red;" >password is Mandatory</p>
 
